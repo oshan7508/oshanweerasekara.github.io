@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<!--
+=====================================================================
+HOW TO EDIT THIS PORTFOLIO (read me first)
+1. Keep this file and a folder named "images" together in one folder.
+2. Open this file in Notepad or VS Code. Double-click it to view in a browser.
+3. Save after each change, then refresh the browser.
+4. Everything is plain text. Only change words between > and <.
+   Never delete a < or > symbol.
+
+CHANGE TEXT
+  Find the words and type over them. Example: <h3>Aerial LiDAR survey</h3>
+
+ADD AN IMAGE (replace a dashed  line with this)
+  <figure><img src="images/dsm.jpg" alt="DSM of the site"><figcaption>Caption here</figcaption></figure>
+  Put dsm.jpg inside the images folder. The name must match exactly.
+  Use JPG or PNG under 500 KB.
+
+ADD A FIELD PHOTO
+  In the "In the field" section, replace a dashed <div class="ph">...</div> with <img src="images/your-photo.jpg" alt="what it shows">
+  and edit the caption. Copy a whole <figure>...</figure> to add more. Landscape photos under 500 KB work best.
+
+ADD A PROJECT
+  Copy the TEMPLATE block in the first project list (Ground surveys),
+  paste it inside any "proj" list, remove the comment markers, edit the text.
+
+ADD A NEW SECTION
+  Copy one whole <section> ... </section> block and paste it between two others.
+
+REMOVE ANYTHING
+  Delete from its opening tag to its closing tag (for a project:
+  <article class="card"> to </article>).
+
+CONTACT DETAILS: see the block marked CONTACT below.
+COLOURS: the --teal and --pink values near the top of the <style> section.
+=====================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oshan Weerasekara – Surveyor, GIS & Remote Sensing Analyst, Spatial Data Specialist</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+:root{--bg:#F1F4F2;--ink:#10221E;--mute:#4B5F59;--line:#C9D5D0;--teal:#1F6F68;--pink:#D6336C;--card:#FFFFFF;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1B18;--ink:#E6EFEB;--mute:#9DB1AA;--line:#27403A;--teal:#5CC2B8;--pink:#FF6B9A;--card:#15261F}}
+:root[data-theme="dark"]{--bg:#0F1B18;--ink:#E6EFEB;--mute:#9DB1AA;--line:#27403A;--teal:#5CC2B8;--pink:#FF6B9A;--card:#15261F}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 "Source Serif 4",Georgia,serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;line-height:1.1;margin:0}
+a{color:var(--teal)}
+a:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:72px 0 56px}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(2.6rem,8vw,5.2rem);font-weight:800;letter-spacing:-.02em}
+.hero p.role{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:1.25rem;margin:14px 0 0;max-width:46ch}
+.hero p.lead{max-width:60ch;color:var(--mute);margin:20px 0 26px}
+.contact{display:flex;flex-wrap:wrap;gap:10px 22px;font-family:"Bricolage Grotesque",sans-serif;font-size:1rem}
+.pin{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--pink);margin-right:8px}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:700;margin-bottom:8px}
+.sub{color:var(--mute);margin:0 0 28px;max-width:62ch}
+.fit{width:100%;border-collapse:collapse;font-size:.98rem}
+.fit th,.fit td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-top:1px solid var(--line)}
+.fit th{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;width:34%}
+.tablewrap{overflow-x:auto}
+.proj{display:grid;gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--teal);padding:20px 22px}
+.card h3{font-size:1.3rem;margin-bottom:4px}
+.meta{color:var(--mute);font-size:.92rem;margin:0 0 10px}
+.card ul{margin:8px 0 0;padding-left:20px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{font-family:"Bricolage Grotesque",sans-serif;font-size:.82rem;border:1px solid var(--line);padding:2px 9px;border-radius:99px;color:var(--mute)}
+.cols{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.cols h3{font-size:1.1rem;margin-bottom:6px}
+.cols p{margin:0;font-size:.98rem}
+.card figure{margin:14px 0 0}
+.card figure img{display:block;max-width:100%;height:auto;border:1px solid var(--line)}
+.card figcaption{color:var(--mute);font-size:.88rem;margin-top:6px}
+.gallery{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.gallery figure{margin:0}
+.gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 30%;border:1px solid var(--line)}
+.ph{display:flex;align-items:center;justify-content:center;text-align:center;aspect-ratio:4/3;border:2px dashed var(--line);color:var(--mute);font-size:.9rem;padding:12px}
+.gallery figcaption{color:var(--mute);font-size:.88rem;margin-top:6px}
+.shots{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:14px}.shots figure{margin:0}.shots img{width:100%;height:auto}.shots.tall img{max-height:520px;object-fit:contain;background:var(--card)}.card figure.narrow{max-width:520px}
+code{font-size:.85em}
+.slot{border:2px dashed var(--line);padding:14px;margin-top:14px;color:var(--mute);font-size:.9rem}
+footer{padding:36px 0 56px;color:var(--mute);font-size:.95rem}
+@media (max-width:560px){body{font-size:17px}.hero{padding-top:48px}.fit th{width:40%}}
+</style>
+</head>
+<body>
+<!-- ===== TOP BANNER: name, title, intro ===== -->
+<header class="hero">
+<div class="wrap">
+<h1>Oshan Weerasekara</h1>
+<p class="role">Surveyor | GIS &amp; Remote Sensing Analyst | Spatial Data Specialist</p>
+<p class="lead">Geospatial professional with experience in field surveying, GIS database development, spatial data integration, LiDAR processing, remote sensing and geospatial quality assurance. Experienced in transforming field observations and spatial datasets into structured geodatabases, analytical maps, terrain products and decision-support visualizations.</p>
+<p class="lead" style="margin-top:-8px">My work combines practical surveying knowledge with GIS-based data management, environmental change analysis and geospatial automation. I am interested in applying these capabilities to spatial information management, data quality assurance and evidence-based decision support in humanitarian and development contexts.</p>
+<!-- CONTACT: edit your email, phone and links here -->
+<div class="contact">
+<span><span class="pin"></span>Colombo, Sri Lanka</span>
+<a href="mailto:oshanweerasekara21@gmail.com">oshanweerasekara21@gmail.com</a>
+<a href="tel:+94760498115">+94 76 0498 115</a>
+<a href="https://linkedin.com/in/oshanweerasekara">LinkedIn</a>
+<a href="https://orcid.org/0009-0002-2101-4690">ORCID</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<!-- ===== SECTION: Education ===== -->
+<section>
+<h2>Education</h2>
+<div class="proj">
+<article class="card"><h3>MSc in Surveying Science</h3><p class="meta">Sabaragamuwa University of Sri Lanka (SUSL) · 2025 – 2027</p></article>
+<article class="card"><h3>BSc in Surveying Science</h3><p class="meta">Sabaragamuwa University of Sri Lanka (SUSL) · 2019 – 2024 · Second Class (Upper Division), specialised in GIS</p></article>
+<article class="card"><h3>Royal College, Colombo 07</h3><p class="meta">2008 – 2017</p></article>
+</div>
+</section>
+
+<!-- ===== SECTION: Fit for the NMAC role ===== -->
+<section>
+<h2>Relevance to the GIS/IMSMA, Spatial Data and Data Analysis Officer role</h2>
+<p class="sub">How my work maps to the main duties. Client, site and project names are withheld. Full detail is available on request.</p>
+<div class="tablewrap">
+<table class="fit">
+<tr><th>LiDAR and point clouds</th><td>Point-cloud classification, DEM, DSM and contours for a 3,500 ha aerial survey, a 6,000+ ha expressway corridor and solar sites, in LiDAR360, DJI Terra and CloudCompare.</td></tr>
+<tr><th>UAV, orthomosaics and imagery</th><td>UAV LiDAR, thermal and photogrammetric processing; orthoimages and 3D models of archaeological sites and towers.</td></tr>
+<tr><th>Terrain and feature identification</th><td>Terrain models used to reveal linear features and ground detail, and point-cloud work at archaeological sites.</td></tr>
+<tr><th>GNSS and coordinate systems</th><td>GNSS/RTK and static control, total-station surveys, georeferencing of legacy data, and consistent projections and accuracy checks.</td></tr>
+<tr><th>Geodatabases and data quality</th><td>Boundary geodatabase for 10 estates (3,000+ ha) and parcel-fabric records updated by merging new and legacy data.</td></tr>
+<tr><th>Analysis, change detection and forecasting</th><td>Shoreline change detection with predictions for 2034 and 2044, spectral index analysis (NDWI, NDVI, SAVI), and thermal time-series analysis, with accuracy assessment.</td></tr>
+<tr><th>Dashboards and maps</th><td>ArcGIS Dashboard for daily collection across three teams, a published web map, and thematic maps for client reports.</td></tr>
+<tr><th>Automation</th><td>Python and Google Earth Engine workflows; Python desktop tools for survey computations.</td></tr>
+<tr><th>Mine action experience</th><td>I have not worked in humanitarian mine action or with IMSMA. My spatial data management, LiDAR and survey skills transfer directly, and I would learn IMSMA and the relevant IMAS quickly.</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ===== SECTION: What I do ===== -->
+<section>
+<h2>What I do</h2>
+<div class="cols">
+<div><h3>Ground surveys</h3><p>Cadastral and topographic surveys with GNSS and robotic total stations, boundary demarcation and parcel records.</p></div>
+<div><h3>LiDAR surveys</h3><p>Aerial and UAV LiDAR for topographic mapping, corridors and solar sites. Point-cloud classification, DEM, DSM and contours.</p></div>
+<div><h3>Photogrammetry</h3><p>UAV and close-range photogrammetry for orthoimages, 3D models and documentation of archaeological sites and structures.</p></div>
+<div><h3>Hydrographic surveys</h3><p>Single-beam bathymetry, river profiles and offshore surveys, tied to GNSS control, with cross-sections, DEMs and volumes.</p></div>
+<div><h3>Remote sensing analysis</h3><p>Satellite and UAV image analysis: classification, change detection, time-series and predictive modelling with accuracy assessment.</p></div>
+<div><h3>GIS analysis</h3><p>Spatial analysis, geodatabases, dashboards, web maps and cartography in ArcGIS Pro and QGIS.</p></div>
+</div>
+</section>
+
+<!-- ===== SECTION: Ground surveys ===== -->
+<section>
+<h2>Ground surveys</h2>
+<p class="sub">Cadastral, topographic and boundary surveys on the ground.</p>
+<div class="proj">
+
+<!-- ===== TEMPLATE: copy from <article> to </article>, paste it anywhere in a project list, then edit the text =====
+<article class="card">
+<h3>Project name</h3>
+<p class="meta">Organisation, size or area, year</p>
+<ul>
+<li>What you did.</li>
+<li>Result or output.</li>
+</ul>
+<div class="tags"><span>Tool</span><span>Method</span></div>
+<figure><img src="images/my-map.jpg" alt="Describe the map"><figcaption>Short caption</figcaption></figure>
+</article>
+===== END TEMPLATE ===== -->
+
+<article class="card">
+<h3>Municipal land surveys</h3>
+<p class="meta">Led a 7-person field team, Oct 2024 to Oct 2025</p>
+<ul>
+<li>My role: led the field team on cadastral and topographic boundary surveys of civic buildings, a fire station and a public park, using robotic total stations and GNSS.</li>
+<li>Deliverables: updated land records in the ArcGIS parcel fabric, and demarcated street, building and fire-gap lines.</li>
+</ul>
+<div class="tags"><span>Total station</span><span>GNSS</span><span>Parcel fabric</span></div>
+</article>
+<article class="card">
+<h3>EUDR compliance survey</h3>
+<p class="meta">Plantation company, 10 estates, 3,000+ ha</p>
+<ul>
+<li>Scope: ground survey of 10 estates (3,000+ ha) for EU Deforestation Regulation due diligence.</li>
+<li>Deliverables: a boundary geodatabase and georeferenced legacy data.</li>
+</ul>
+<div class="tags"><span>Geodatabase</span><span>GNSS</span><span>Georeferencing</span></div>
+</article>
+<article class="card">
+<h3>Topographic survey with temporary benchmarks</h3>
+<p class="meta">Contour plan of a land parcel</p>
+<ul>
+<li>Deliverable: topographic survey and contour plan of a land parcel.</li>
+<li>Quality control: survey tied to temporary benchmarks with northing, easting and elevation.</li>
+</ul>
+<div class="tags"><span>Topographic survey</span><span>Contours</span><span>Control points</span></div>
+<figure><img src="images/contour-plan-of-a-land-parcel.jpg" alt="Contour plan of a land parcel" loading="lazy"><figcaption>Contour plan of a land parcel.</figcaption></figure>
+</article>
+</div>
+</section>
+
+<!-- ===== SECTION: LiDAR surveys ===== -->
+<section>
+<h2>LiDAR surveys</h2>
+<p class="sub">Aerial and UAV LiDAR processed into terrain models and classified point clouds.</p>
+<div class="proj">
+<article class="card">
+<h3>Solar site LiDAR surveys</h3>
+<p class="meta">Survey company, UAV LiDAR and ground surveys</p>
+<ul>
+<li>UAV LiDAR for topographic mapping, producing orthoimages, contour datasets and terrain models for planning.</li>
+<li>Thermal imagery processing for solar-farm analysis.</li>
+</ul>
+<div class="tags"><span>UAV LiDAR</span><span>DJI Terra</span><span>Contours</span><span>Thermal</span></div>
+
+<figure class="narrow"><img src="images/solar-site-uav-orthomosaic.jpg" alt="UAV orthomosaic of a solar site over satellite imagery." loading="lazy"><figcaption>UAV orthomosaic of a solar site over satellite imagery.</figcaption></figure>
+</article>
+
+<article class="card">
+<h3>Coastal zone LiDAR surveys</h3>
+<p class="meta">Survey company, coastal zone</p>
+<ul>
+<li>UAV LiDAR topographic mapping of a coastal zone, producing contour and land-cover maps.</li>
+</ul>
+<div class="tags"><span>UAV LiDAR</span><span>Contours</span><span>Land cover</span></div>
+<figure><img src="images/contour-and-land-cover-map-of-a-coastal-zone.jpg" alt="Contour and land-cover map of a coastal zone" loading="lazy"><figcaption>Contour and land-cover map of a coastal zone.</figcaption></figure>
+</article>
+
+<article class="card">
+<h3>Expressway corridor LiDAR survey</h3>
+<p class="meta">Survey company, 6,000+ ha</p>
+<ul>
+<li>My role: supported the LiDAR workflow across the corridor. Deliverables: Digital Elevation and Digital Surface Models.</li>
+<li>Quality control: checks and comparisons in CloudCompare.</li>
+</ul>
+<div class="tags"><span>LiDAR360</span><span>CloudCompare</span><span>DEM / DSM</span></div>
+<figure><img src="images/point-cloud-and-ground-classification-editing-in-lidar360.jpg" alt="Point cloud and ground classification editing in LiDAR360" loading="lazy"><figcaption>Point cloud with a profile section for ground classification editing in LiDAR360.</figcaption></figure>
+</article>
+
+<article class="card">
+<h3>Aerial LiDAR survey</h3>
+<p class="meta">Survey company, 3,500 ha</p>
+<ul>
+<li>Aerial LiDAR acquisition and processing across 3,500 ha.</li>
+</ul>
+<div class="tags"><span>Aerial LiDAR</span><span>Point clouds</span></div>
+<div class="shots "><figure><img src="images/classified-point-cloud-plan-view.jpg" alt="Classified point cloud, plan view" loading="lazy"><figcaption>Classified point cloud, plan view: ground, vegetation, buildings.</figcaption></figure><figure><img src="images/classified-point-cloud-oblique-view.jpg" alt="Classified point cloud, oblique view" loading="lazy"><figcaption>Classified point cloud, oblique view.</figcaption></figure><figure><img src="images/rgb-point-cloud.jpg" alt="RGB point cloud" loading="lazy"><figcaption>RGB point cloud.</figcaption></figure><figure><img src="images/digital-elevation-model-coloured-by-height.jpg" alt="Digital elevation model coloured by height" loading="lazy"><figcaption>Digital elevation model, coloured by height.</figcaption></figure><figure><img src="images/hillshaded-digital-surface-model.jpg" alt="Hillshaded digital surface model" loading="lazy"><figcaption>Hillshaded digital surface model.</figcaption></figure><figure><img src="images/dem-detail-with-outlined-features.jpg" alt="DEM detail with outlined features" loading="lazy"><figcaption>DEM detail with outlined features.</figcaption></figure><figure><img src="images/rgb-point-cloud-of-a-survey-block.jpg" alt="RGB point cloud of a survey block" loading="lazy"><figcaption>RGB point cloud of a survey block in DJI Terra.</figcaption></figure><figure><img src="images/hillshaded-dem-detail-in-arcgis-pro.jpg" alt="Hillshaded DEM detail in ArcGIS Pro" loading="lazy"><figcaption>Hillshaded DEM detail in ArcGIS Pro: road, field boundaries and ponds.</figcaption></figure></div>
+</article>
+</div>
+</section>
+
+<!-- ===== SECTION: Photogrammetry ===== -->
+<section>
+<h2>Photogrammetry</h2>
+<p class="sub">Orthoimages and 3D models for heritage sites and structures.</p>
+<div class="proj">
+<article class="card">
+<h3>Archaeological site surveys</h3>
+<p class="meta">Photogrammetric surveys</p>
+<ul>
+<li>Photogrammetric documentation of archaeological sites.</li>
+</ul>
+<div class="tags"><span>Photogrammetry</span><span>Orthomosaic</span><span>3D model</span></div>
+<div class="shots "><figure><img src="images/rock-outcrop-rgb-point-cloud.jpg" alt="Rock outcrop, RGB point cloud" loading="lazy"><figcaption>Archaeological rock site and surroundings, RGB point cloud, top view.</figcaption></figure><figure><img src="images/point-cloud-in-lidar360.jpg" alt="Point cloud in LiDAR360" loading="lazy"><figcaption>Point cloud of the same site in LiDAR360, with numbered points.</figcaption></figure></div>
+</article>
+
+<article class="card">
+<h3>Broadcasting towers, 3D reconstruction</h3>
+<p class="meta">Survey company, 14 national towers, the company's largest project</p>
+<ul>
+<li>My role: led drawing outputs and 3D modelling for structural assessment.</li>
+<li>Reconstruction in Bentley ContextCapture and Agisoft Metashape.</li>
+</ul>
+<div class="tags"><span>ContextCapture</span><span>Metashape</span><span>3D modelling</span></div>
+<div class="shots tall"><figure><img src="images/3d-model-of-a-broadcasting-tower.jpg" alt="3D model of a broadcasting tower" loading="lazy"><figcaption>3D reconstruction of a broadcasting tower.</figcaption></figure><figure><img src="images/3d-model-of-a-broadcasting-tower-side-view.jpg" alt="3D model of a broadcasting tower, side view" loading="lazy"><figcaption>3D reconstruction of a broadcasting tower, elevation view.</figcaption></figure></div>
+</article>
+</div>
+</section>
+
+<!-- ===== SECTION: Hydrographic surveys ===== -->
+<section>
+<h2>Hydrographic surveys</h2>
+<p class="sub">Bathymetry and river work from the field to final charts and models.</p>
+<div class="proj">
+
+<article class="card">
+<h3>Dump site hydrographic survey</h3>
+<p class="meta">Hydrographic survey</p>
+<ul>
+<li>Hydrographic survey of the dump site.</li>
+</ul>
+<div class="tags"><span>Bathymetry</span><span>HYPACK</span></div>
+</article>
+
+<article class="card">
+<h3>Offshore bathymetry and coastal survey</h3>
+<p class="meta">Survey company, coastal area</p>
+<ul>
+<li>Offshore bathymetric survey combined with LiDAR, river-profile and level surveys.</li>
+<li>All work controlled with static GNSS.</li>
+</ul>
+<div class="tags"><span>Bathymetry</span><span>Static GNSS</span><span>LiDAR</span></div>
+</article>
+
+<article class="card">
+<h3>River bathymetric survey</h3>
+<p class="meta">Government irrigation agency, about 82 km of river</p>
+<ul>
+<li>Deliverables: 250 m cross-sections and a DEM from combined GNSS, total station and single-beam echo-sounder data.</li>
+<li>Computed excess sand volumes.</li>
+<li>Built an ArcGIS Dashboard to monitor daily collection across three teams, and published a final web map.</li>
+</ul>
+<div class="tags"><span>Echo-sounder</span><span>HYPACK</span><span>ArcGIS Dashboards</span><span>Volumes</span></div>
+</article>
+</div>
+</section>
+
+<!-- ===== SECTION: Remote sensing analysis ===== -->
+<section>
+<h2>Remote sensing analysis</h2>
+<p class="sub">Satellite and UAV imagery turned into measurements, trends and predictions.</p>
+<div class="proj">
+<article class="card">
+<h3>Shoreline change detection and prediction</h3>
+<p class="meta">Southwestern coastline, Sri Lanka. Published research, Journal of Geospatial Surveying, 2024</p>
+<ul>
+<li>Multi-temporal Landsat imagery: preprocessing, classification and shoreline extraction.</li>
+<li>Erosion and accretion rates calculated with DSAS.</li>
+<li>Predicted shoreline positions for 2034 and 2044, with accuracy assessment of the results.</li>
+</ul>
+<div class="tags"><span>Landsat</span><span>Classification</span><span>DSAS</span><span>Prediction</span></div>
+</article>
+
+<article class="card">
+<h3>Thermal imagery time-series analysis</h3>
+<p class="meta">Survey company, DJI Matrice 300 (H20T)</p>
+<ul>
+<li>Processed UAV thermal imagery into datasets for time-series and change-detection analysis.</li>
+<li>Thermal analysis of solar farms.</li>
+</ul>
+<div class="tags"><span>Thermal</span><span>UAV</span><span>Change detection</span></div>
+<figure><img src="images/thermal-image-of-a-solar-array-with-spot-markers.jpg" alt="Thermal image of a solar array with spot markers" loading="lazy"><figcaption>Thermal image of a solar array (17.1 to 70.4 °C) with numbered spot markers SP1 to SP200.</figcaption></figure>
+</article>
+
+<article class="card">
+<h3>Satellite image processing and spectral indices</h3>
+<p class="meta">MSc coursework and independent work, remote sensing</p>
+<ul>
+<li>Processing of multispectral satellite data, including cloud and shadow masking and compositing.</li>
+<li>Spectral indices such as NDWI, NDVI and SAVI for water, vegetation and soil analysis.</li>
+<li>Histogram matching to make images from different dates and sensors comparable.</li>
+</ul>
+<div class="tags"><span>Satellite data</span><span>NDWI</span><span>NDVI</span><span>SAVI</span><span>Histogram matching</span><span>Google Earth Engine</span></div>
+
+</article>
+
+<article class="card">
+<h3>Reproducible workflows in Python and Google Earth Engine</h3>
+<p class="meta">Ongoing, alongside MSc in Surveying Sciences</p>
+<ul>
+<li>Developing scalable, repeatable remote sensing workflows for coastal and environmental monitoring.</li>
+</ul>
+<div class="tags"><span>Python</span><span>Google Earth Engine</span><span>Automation</span></div>
+<figure><img src="images/google-earth-engine-script.jpg" alt="Google Earth Engine script" loading="lazy"><figcaption>Google Earth Engine script: Sentinel-2 median composite and NDWI.</figcaption></figure>
+</article>
+</div>
+</section>
+
+<!-- ===== SECTION: GIS analysis ===== -->
+<section>
+<h2>GIS analysis</h2>
+<p class="sub">Spatial analysis, data management and mapping.</p>
+<div class="proj">
+<article class="card">
+<h3>Spatial analysis and mapping deliverables</h3>
+<p class="meta">Survey company, ArcGIS Pro and QGIS</p>
+<ul>
+<li>Spatial analysis and final maps for survey projects, including topographic mapping and hydrological area identification.</li>
+<li>Orthoimages, contours and terrain models prepared as client deliverables.</li>
+</ul>
+<div class="tags"><span>ArcGIS Pro</span><span>QGIS</span><span>Cartography</span></div>
+
+</article>
+
+<article class="card">
+<h3>Dashboards and web mapping</h3>
+<p class="meta">Government irrigation agency, river survey</p>
+<ul>
+<li>ArcGIS Dashboard monitoring daily data collection across three teams.</li>
+<li>Published a final ArcGIS Online web map and presented it to the agency and industry stakeholders.</li>
+</ul>
+<div class="tags"><span>ArcGIS Dashboards</span><span>ArcGIS Online</span></div>
+</article>
+
+<article class="card">
+<h3>Geodatabases and land records</h3>
+<p class="meta">Municipal and plantation surveys</p>
+<ul>
+<li>Boundary geodatabase for 10 estates (3,000+ ha), with legacy data georeferenced.</li>
+<li>Parcel fabric land records updated by merging new and legacy survey data.</li>
+</ul>
+<div class="tags"><span>Geodatabase</span><span>Parcel fabric</span><span>Georeferencing</span></div>
+</article>
+</div>
+</section>
+
+<!-- ===== SECTION: Research ===== -->
+<section>
+<h2>Research</h2>
+<p class="sub">Shoreline Change Detection and Future Prediction for the Southwestern Coastline, Sri Lanka.</p>
+<p>Weerasekara, O. N. &amp; Illeperuma, I. A. K. S. (2024). <em>Journal of Geospatial Surveying</em>, 4(2), 17–23. First and corresponding author. I used DSAS on multi-temporal Landsat imagery to measure erosion and accretion rates, predicted shoreline positions for 2034 and 2044, and assessed the accuracy of the results. <a href="https://doi.org/10.4038/jgs.v4i2.57">Read the paper</a>.</p>
+<p>Research interests: coastal and environmental change detection, remote sensing for monitoring, and reproducible geospatial automation in Python and Google Earth Engine. Currently reading for an MSc in Surveying Sciences.</p>
+</section>
+
+<!-- ===== SECTION: In the field (photo gallery) ===== -->
+<section>
+<h2>In the field</h2>
+<p class="sub">Photos from ground, LiDAR and hydrographic fieldwork.</p>
+<div class="gallery"><figure><img src="images/total-station-set-up-beside-a-hillside-road.jpg" alt="Total station set up beside a hillside road." loading="lazy"><figcaption>Total station set up beside a hillside road.</figcaption></figure><figure><img src="images/total-station-set-up-on-an-urban-street.jpg" alt="Total station set up on an urban street." loading="lazy"><figcaption>Total station set up on an urban street.</figcaption></figure><figure><img src="images/gnss-rover-on-a-tripod-with-a-field-controller-boundary-surv.jpg" alt="GNSS rover on a tripod with a field controller, boundary survey." loading="lazy"><figcaption>GNSS rover on a tripod with a field controller, boundary survey.</figcaption></figure><figure><img src="images/gnss-rover-measuring-on-a-hillside.jpg" alt="GNSS rover measuring on a hillside." loading="lazy"><figcaption>GNSS rover measuring on a hillside.</figcaption></figure><figure><img src="images/gnss-receiver-on-a-tripod-above-a-river-valley.jpg" alt="GNSS receiver on a tripod above a river valley." loading="lazy"><figcaption>GNSS receiver on a tripod above a river valley.</figcaption></figure><figure><img src="images/levelling-the-gnss-receiver-tripod-over-a-control-point.jpg" alt="Levelling the GNSS receiver tripod over a control point." loading="lazy"><figcaption>Levelling the GNSS receiver tripod over a control point.</figcaption></figure><figure><img src="images/terrestrial-laser-scanner-set-up-on-site.jpg" alt="Terrestrial laser scanner set up on site." loading="lazy"><figcaption>Terrestrial laser scanner set up on site.</figcaption></figure><figure><img src="images/handheld-mobile-lidar-scanner-in-use.jpg" alt="Handheld mobile LiDAR scanner in use." loading="lazy"><figcaption>Handheld mobile LiDAR scanner in use.</figcaption></figure><figure><img src="images/planning-a-uav-mapping-flight-on-the-drone-controller.jpg" alt="Planning a UAV mapping flight on the drone controller." loading="lazy"><figcaption>Planning a UAV mapping flight on the drone controller.</figcaption></figure><figure><img src="images/crew-setting-up-the-gnss-antenna-and-echo-sounder-box-on-a-s.jpg" alt="Crew setting up the GNSS antenna and echo-sounder box on a survey vessel." loading="lazy"><figcaption>Crew setting up the GNSS antenna and echo-sounder box on a survey vessel.</figcaption></figure><figure><img src="images/crew-monitoring-the-echo-sounder-equipment-offshore.jpg" alt="Crew monitoring the echo-sounder equipment offshore." loading="lazy"><figcaption>Crew monitoring the echo-sounder equipment offshore.</figcaption></figure><figure><img src="images/echo-sounder-acquisition-computer-on-the-vessel.jpg" alt="Echo-sounder acquisition computer on the vessel." loading="lazy"><figcaption>Echo-sounder acquisition computer on the vessel.</figcaption></figure><figure><img src="images/navigation-and-sounding-display-during-a-bathymetric-survey.jpg" alt="Navigation and sounding display during a bathymetric survey." loading="lazy"><figcaption>Navigation and sounding display during a bathymetric survey.</figcaption></figure><figure><img src="images/river-survey-with-a-gnss-rover-pole-in-the-water.jpg" alt="River survey with a GNSS rover pole in the water." loading="lazy"><figcaption>River survey with a GNSS rover pole in the water.</figcaption></figure><figure><img src="images/gnss-rover-pole-from-a-boat-at-a-river-bank.jpg" alt="GNSS rover pole from a boat at a river bank." loading="lazy"><figcaption>GNSS rover pole from a boat at a river bank.</figcaption></figure><figure><img src="images/reviewing-survey-plans-with-a-field-team.jpg" alt="Reviewing survey plans with a field team." loading="lazy"><figcaption>Reviewing survey plans with a field team.</figcaption></figure></div>
+</section>
+
+<!-- ===== SECTION: Self learning ===== -->
+<section>
+<h2>Self learning</h2>
+<div class="cols">
+<div><h3>Python automations</h3><p>Built Python desktop tools for survey computations, including traverse computation and adjustment and road cross-section offsets, packaged as standalone Windows applications.</p></div>
+<div><h3>Advanced GNSS and GIS programming</h3><p>Ongoing self-study of advanced GNSS concepts and GIS programming.</p></div>
+</div>
+</section>
+
+<!-- ===== SECTION: Skills and tools ===== -->
+<section style="border-bottom:0">
+<h2>Skills and tools</h2>
+<div class="cols">
+<div><h3>GIS and data management</h3><p>ArcGIS Pro, ArcGIS Online, QGIS, geodatabases, parcel fabric, georeferencing, cartography, dashboards and web maps, GeoServer.</p></div>
+<div><h3>Analysis and automation</h3><p>Satellite and UAV analysis, supervised classification, spectral indices, change detection, DSAS, point-cloud classification, DEM and DSM generation, accuracy assessment. Python, Google Earth Engine, Leaflet, Leafmap.</p></div>
+<div><h3>Surveying</h3><p>GNSS/RTK and static control, total station, UAV and LiDAR acquisition, terrestrial and handheld laser scanning, bathymetric, cadastral and topographic surveys.</p></div>
+<div><h3>Software</h3><p>AutoCAD, Civil 3D, DJI Terra, LiDAR360, Pix4D, Agisoft Metashape, ContextCapture, CloudCompare, Leica Infinity, Trimble Business Center, HYPACK, ArcGIS Pro, QGIS.</p></div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">Oshan Weerasekara · <a href="mailto:oshanweerasekara21@gmail.com">oshanweerasekara21@gmail.com</a> · References available on request. Client and project names are withheld.</div></footer>
+
+</body>
+</html>
